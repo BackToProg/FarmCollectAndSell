@@ -19,6 +19,9 @@ namespace Source.Modules.Infrastructure.Factory
 
         public GameObject CreatePlayer(GameObject at) => 
             InstantiateRegistered(AssetPath.PlayerPath, at.transform.position);
+        
+        public GameObject CreateHaybale(GameObject at) => 
+            InstantiateRegistered(AssetPath.HaybalePathh, at.transform.position);
 
         public void CreateHud() => 
             InstantiateRegistered(AssetPath.HudPath);

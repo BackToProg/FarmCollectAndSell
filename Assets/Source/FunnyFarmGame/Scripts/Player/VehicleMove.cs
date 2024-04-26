@@ -1,5 +1,4 @@
 using Source.Modules.Data;
-using Source.Modules.Infrastructure;
 using Source.Modules.Infrastructure.Services;
 using Source.Modules.Infrastructure.Services.Input;
 using Source.Modules.Infrastructure.Services.PersistentProgress;
@@ -12,6 +11,7 @@ namespace Source.FunnyFarmGame.Scripts.Player
     public class VehicleMove : MonoBehaviour, ISavedProgress
     {
         [SerializeField] private float _movementSpeed = 4.0f;
+        [SerializeField] private float _rotationSpeed = 0.05f;
 
         private IInputService _input;
         private Camera _camera;
@@ -31,7 +31,7 @@ namespace Source.FunnyFarmGame.Scripts.Player
         private void Update()
         {
             Vector3 movementVector = Vector3.zero;
-
+            
             if (_input.Axis.sqrMagnitude > Mathf.Epsilon)
             {
                 movementVector = _camera.transform.TransformDirection(_input.Axis);
@@ -39,11 +39,14 @@ namespace Source.FunnyFarmGame.Scripts.Player
                 movementVector.y = 0;
                 movementVector.Normalize();
 
-                transform.forward = movementVector;
+               // transform.forward = movementVector;
+               
+               Quaternion rotation = Quaternion.LookRotation(movementVector);
+               transform.rotation = Quaternion.Lerp(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);
             }
 
             movementVector += Physics.gravity;
-
+            
             _characterController.Move(movementVector * (_movementSpeed * Time.deltaTime));
         }
 

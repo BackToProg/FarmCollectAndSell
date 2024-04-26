@@ -9,6 +9,7 @@ namespace Source.Modules.Infrastructure.Factory
     {
         GameObject CreatePlayer(GameObject at);
         void CreateHud();
+        GameObject CreateHaybale(GameObject at);
         List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
         void Cleanup();
