@@ -1,7 +1,6 @@
 using Source.Modules.Data;
 using Source.Modules.Infrastructure.Services.PersistentProgress;
 using Source.Modules.Infrastructure.Services.SaveLoad;
-using UnityEngine;
 
 namespace Source.Modules.Infrastructure.States
 {
@@ -36,7 +35,6 @@ namespace Source.Modules.Infrastructure.States
 
         private PlayerProgress NewProgress()
         {
-            Debug.Log("Here");
             return new PlayerProgress("Main");
         }
     }

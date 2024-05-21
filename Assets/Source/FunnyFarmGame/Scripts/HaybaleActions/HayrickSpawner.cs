@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Source.FunnyFarmGame.Scripts.Haybale
 {
-    public class HaybaleSpawner : MonoBehaviour
+    public class HayrickSpawner : MonoBehaviour
     {
         private IGameFactory _gameFactory;
         private int _cutCornCounter;

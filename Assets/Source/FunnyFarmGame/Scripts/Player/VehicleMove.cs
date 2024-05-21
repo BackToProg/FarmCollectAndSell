@@ -38,8 +38,7 @@ namespace Source.FunnyFarmGame.Scripts.Player
                 movementVector.z = movementVector.y;
                 movementVector.y = 0;
                 movementVector.Normalize();
-
-               // transform.forward = movementVector;
+                
                
                Quaternion rotation = Quaternion.LookRotation(movementVector);
                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, _rotationSpeed * Time.deltaTime);

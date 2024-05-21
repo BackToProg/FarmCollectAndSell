@@ -1,4 +1,6 @@
 using Source.FunnyFarmGame.Scripts.Haybale;
+using Source.FunnyFarmGame.Scripts.InteractObjects;
+using Source.Modules.Infrastructure.Actions;
 using UnityEngine;
 
 namespace Source.FunnyFarmGame.Scripts.Player
@@ -6,15 +8,17 @@ namespace Source.FunnyFarmGame.Scripts.Player
     public class CornCutter : MonoBehaviour
     {
         [SerializeField] private TriggerObserver _trigger;
-        [SerializeField] private HaybaleSpawner _haybaleSpawner;
+        [SerializeField] private HayrickSpawner _hayrickSpawner;
 
         private void OnEnable() => 
             _trigger.TriggerEnter += TriggerEnter;
 
-        private void TriggerEnter(Collider obj)
+        private void TriggerEnter(IInteractable interactable)
         {
-            obj.gameObject.SetActive(false);
-            _haybaleSpawner.ChangeCornCounter();
+            if (interactable is not Corn corn) return;
+
+            corn.Deactivate();
+            _hayrickSpawner.ChangeCornCounter();
         }
 
         private void OnDisable() => 

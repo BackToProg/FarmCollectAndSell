@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 8467387881905020919}
   - component: {fileID: 7477489812009297695}
   - component: {fileID: 6851466709227062865}
-  m_Layer: 0
+  - component: {fileID: 5986425012987567906}
+  - component: {fileID: 7124196297641739287}
+  m_Layer: 9
   m_Name: Haybale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,3 +135,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3484172, y: 1.3484172, z: 2}
   m_Center: {x: 0, y: 0.6742086, z: 0}
+--- !u!114 &5986425012987567906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630193621447823552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9faaa2fae99748fe90410609d29ca84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveToTargetSpeed: 100
+--- !u!114 &7124196297641739287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630193621447823552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e486539da33d46658a91006584db7caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _haybalePrice: 100
